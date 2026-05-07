@@ -1,4 +1,4 @@
-🗳️ SISTEMA WEB DE ENCUESTAS ELECTORALES
+ SISTEMA WEB DE ENCUESTAS ELECTORALES
 
 <p align="center">
 
@@ -7,9 +7,8 @@ para administrar información electoral y analizar encuestas políticas.
 
 </p>
 
----
 
-# 📌 DESCRIPCIÓN DEL PROYECTO
+#  DESCRIPCIÓN DEL PROYECTO
 
 El sistema permite centralizar la información relacionada con:
 
@@ -21,9 +20,8 @@ El sistema permite centralizar la información relacionada con:
 
 La plataforma facilita el análisis de tendencias electorales mediante gráficos, reportes y administración de información en tiempo real.
 
----
 
-# ❗ PROBLEMA
+#  PROBLEMA
 
 Actualmente la información electoral se encuentra:
 
@@ -39,15 +37,13 @@ Esto genera dificultades para:
 - administrar elecciones
 - analizar encuestas políticas
 
----
 
-# 🎯 OBJETIVO GENERAL
+# OBJETIVO GENERAL
 
 Desarrollar un sistema web centralizado que permita administrar información electoral y analizar encuestas mediante estadísticas y reportes.
 
----
 
-# ✅ OBJETIVOS ESPECÍFICOS
+# OBJETIVOS ESPECÍFICOS
 
 - Registrar partidos políticos
 - Registrar candidatos
@@ -57,13 +53,11 @@ Desarrollar un sistema web centralizado que permita administrar información ele
 - Analizar tendencias políticas
 - Generar reportes automáticos
 
----
 
-# 🧱 ARQUITECTURA HEXAGONAL
+#  ARQUITECTURA HEXAGONAL
 
 El proyecto utiliza Arquitectura Hexagonal para separar responsabilidades y mantener un sistema modular y escalable.
 
----
 
 # 🏗️ ESTRUCTURA GENERAL
 
@@ -110,9 +104,8 @@ El proyecto utiliza Arquitectura Hexagonal para separar responsabilidades y mant
                     └──────────────────────┘
 ```
 
----
 
-# 📂 ESTRUCTURA DEL PROYECTO
+#  ESTRUCTURA DEL PROYECTO
 
 ```text
 src/
@@ -182,11 +175,10 @@ src/
             └── EncuestasElectoralesApplication.java
 ```
 
----
 
-# 🧠 EXPLICACIÓN DE CAPAS
+# EXPLICACIÓN DE CAPAS
 
-## 🌐 FRONTEND
+## FRONTEND
 
 Parte visual del sistema.
 

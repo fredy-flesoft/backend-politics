@@ -1,190 +1,125 @@
- SISTEMA WEB DE ENCUESTAS ELECTORALES
 
-<p align="center">
-
-Sistema desarrollado con <b>Java + Spring Boot + Arquitectura Hexagonal</b>  
-para administrar información electoral y analizar encuestas políticas.
-
-</p>
+Politics
+Politics es una plataforma web integral diseñada para la gestión moderna de organizaciones políticas, candidatos y comunidades de afiliados. Su objetivo es centralizar en un solo sistema todas las herramientas necesarias para la administración, análisis y crecimiento de actividades políticas.
 
 
-#  DESCRIPCIÓN DEL PROYECTO
+Objetivo
+Brindar a partidos políticos, movimientos y candidatos una solución digital completa que permita:
 
-El sistema permite centralizar la información relacionada con:
-
-- partidos políticos
-- candidatos
-- elecciones
-- encuestas electorales
-- resultados estadísticos
-
-La plataforma facilita el análisis de tendencias electorales mediante gráficos, reportes y administración de información en tiempo real.
+Gestionar su estructura organizativa
+Administrar la información pública de candidatos
+Analizar la percepción ciudadana
+Optimizar campañas políticas
+Controlar afiliados, aportes y finanzas
 
 
-#  PROBLEMA
-
-Actualmente la información electoral se encuentra:
-
-- dispersa
-- poco organizada
-- difícil de analizar
-- sin centralización
-
-Esto genera dificultades para:
-
-- consultar candidatos
-- visualizar resultados
-- administrar elecciones
-- analizar encuestas políticas
+Funcionalidades principales
+Gestión de candidatos y partidos
+Registro y administración de candidatos
+Gestión de partidos políticos y movimientos
+Perfil público con:
+Hoja de vida
+Trayectoria política
+Propuestas
+Historial
 
 
-# OBJETIVO GENERAL
-
-Desarrollar un sistema web centralizado que permita administrar información electoral y analizar encuestas mediante estadísticas y reportes.
-
-
-# OBJETIVOS ESPECÍFICOS
-
-- Registrar partidos políticos
-- Registrar candidatos
-- Gestionar elecciones
-- Registrar encuestas electorales
-- Visualizar estadísticas
-- Analizar tendencias políticas
-- Generar reportes automáticos
+Opinión pública y análisis
+Encuestas personalizadas
+Sistema de comentarios ciudadanos
+Ranking de popularidad y preferencia
+Métricas de percepción pública
+Análisis de tendencias
 
 
-#  ARQUITECTURA HEXAGONAL
-
-El proyecto utiliza Arquitectura Hexagonal para separar responsabilidades y mantener un sistema modular y escalable.
-
-
-# 🏗️ ESTRUCTURA GENERAL
-
-```text
-                    ┌──────────────────────┐
-                    │      FRONTEND        │
-                    │  Página Web / API    │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │      CONTROLLER      │
-                    │   Endpoints REST     │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │      USE CASES       │
-                    │   Lógica del negocio │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │       DOMAIN         │
-                    │ Entidades y reglas   │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │        PORTS         │
-                    │ Interfaces del core  │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │      ADAPTERS        │
-                    │ Spring Data JPA      │
-                    └──────────┬───────────┘
-                               │
-                               ▼
-                    ┌──────────────────────┐
-                    │       MYSQL DB       │
-                    │    Base de datos     │
-                    └──────────────────────┘
-```
+Gestión de afiliados
+Registro de simpatizantes y militantes
+Segmentación por tipo de afiliación
+Control de membresías
+Gestión de cuotas y aportes
+Historial de participación
 
 
-#  ESTRUCTURA DEL PROYECTO
-
-```text
-src/
-└── main/
-    └── java/
-        └── com/encuestas/electorales/
-
-            ├── domain/
-            │
-            │   ├── model/
-            │   │   ├── Partido.java
-            │   │   ├── Candidato.java
-            │   │   ├── Eleccion.java
-            │   │   ├── Encuesta.java
-            │   │   └── ResultadoEncuesta.java
-            │   │
-            │   └── repository/
-            │       ├── PartidoRepository.java
-            │       ├── CandidatoRepository.java
-            │       ├── EleccionRepository.java
-            │       └── EncuestaRepository.java
-            │
-            │
-            ├── application/
-            │
-            │   ├── port/
-            │   │
-            │   │   ├── in/
-            │   │   │   ├── RegistrarPartidoUseCase.java
-            │   │   │   ├── RegistrarCandidatoUseCase.java
-            │   │   │   ├── RegistrarEncuestaUseCase.java
-            │   │   │   └── GenerarReporteUseCase.java
-            │   │   │
-            │   │   └── out/
-            │   │       ├── PartidoPersistencePort.java
-            │   │       ├── CandidatoPersistencePort.java
-            │   │       ├── EncuestaPersistencePort.java
-            │   │       └── ReportePersistencePort.java
-            │   │
-            │   └── service/
-            │       ├── PartidoService.java
-            │       ├── CandidatoService.java
-            │       ├── EncuestaService.java
-            │       └── ReporteService.java
-            │
-            │
-            ├── infrastructure/
-            │
-            │   ├── persistence/
-            │   │   ├── entity/
-            │   │   ├── mapper/
-            │   │   └── repository/
-            │   │
-            │   └── config/
-            │       └── BeanConfiguration.java
-            │
-            │
-            ├── adapters/
-            │
-            │   └── controller/
-            │       ├── PartidoController.java
-            │       ├── CandidatoController.java
-            │       ├── EncuestaController.java
-            │       └── ReporteController.java
-            │
-            │
-            └── EncuestasElectoralesApplication.java
-```
+Contabilidad partidaria
+Registro de ingresos y egresos
+Control de aportes (donaciones, cuotas, etc.)
+Reportes financieros
+Transparencia y trazabilidad de fondos
 
 
-# EXPLICACIÓN DE CAPAS
+Módulo comercial (intranet)
+Tienda interna para:
+Productos de campaña (merchandising)
+Material publicitario
+Gestión de pedidos
+Control de inventario
+Integración con afiliados (beneficios exclusivos)
 
-## FRONTEND
 
-Parte visual del sistema.
+Eventos y organización
+Gestión de eventos políticos (mitines, reuniones, campañas)
+Calendario centralizado
+Registro de asistencia
+Notificaciones y recordatorios
 
-Permite:
 
-- registrar candidatos
-- registrar partidos
-- visualizar encuestas
-- mostrar estadísticas
+Comunicación y contenido
+Publicación de noticias
+Gestión de comunicados oficiales
+Blog o sección informativa
+Difusión de actividades
+
+
+Accesos y roles
+Plataforma pública (consulta ciudadana)
+Intranet privada con autenticación:
+Administradores
+Candidatos
+Equipo de campaña
+Afiliados
+
+
+Posibles extensiones (visión futura)
+Aquí te agrego ideas potentes para que tu proyecto escale:
+
+Análisis con IA
+Sentimiento de comentarios
+Predicción de tendencias electorales
+Geolocalización
+Mapas de apoyo por región
+Segmentación territorial de campañas
+App móvil
+Participación ciudadana en tiempo real
+Notificaciones push
+Simulación electoral
+Proyección de resultados basada en encuestas
+🔗 Integración con redes sociales
+Monitoreo de reputación
+Publicación automatizada
+Transparencia pública
+Portal de acceso abierto a financiamiento
+Cumplimiento normativo
+
+
+Enfoque del sistema
+Politics no es solo un sistema CRUD, es una plataforma pensada como:
+
+Un ERP político
+Un CRM de afiliados
+Un sistema de inteligencia electoral
+
+Todo integrado en una sola solución.
+
+
+Público objetivo
+Partidos políticos
+Movimientos regionales
+Equipos de campaña
+Consultoras políticas
+
+
+Si quieres, en el siguiente paso puedo ayudarte a:
+
+Definir módulos en arquitectura DDD + hexagonal (bien alineado a lo que ya haces)
+Diseñar el dominio (Bounded Contexts)
+O incluso proponerte un modelo SaaS (multi-tenant, que ya va perfecto con tu experiencia)
